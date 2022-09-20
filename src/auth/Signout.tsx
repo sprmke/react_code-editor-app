@@ -2,17 +2,19 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { Button, makeStyles } from '@material-ui/core';
 import { commonColors } from '../theme/color';
 
-const SignIn = () => {
-  const { loginWithRedirect } = useAuth0();
+const SignOut = () => {
+  const { logout } = useAuth0();
   const classes = useStyles();
 
-  const onSignIn = () => {
-    loginWithRedirect();
+  const onSignOut = () => {
+    logout({
+      returnTo: window.location.origin,
+    });
   };
 
   return (
-    <Button className={classes.button} onClick={onSignIn}>
-      Sign In
+    <Button className={classes.button} onClick={onSignOut}>
+      Sign Out
     </Button>
   );
 };
@@ -23,4 +25,4 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default SignIn;
+export default SignOut;
