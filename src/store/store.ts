@@ -8,7 +8,7 @@ import {
   REHYDRATE,
 } from 'redux-persist';
 import persistStore from 'redux-persist/es/persistStore';
-import persistedReducer from './persistconfig';
+import persistedReducer from './persistConfig';
 
 // List of redux-persist actions to be ignored
 // for serializableCheck on redux toolkit middleware serializableCheck

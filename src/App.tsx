@@ -1,7 +1,8 @@
 import React from 'react';
+import MainRoutes from './routes/MainRoutes';
 
 function App() {
-  return <div>Hello World!</div>;
+  return <MainRoutes />;
 }
 
 export default App;
