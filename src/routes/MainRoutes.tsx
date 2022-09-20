@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import ProtectedRoute from '../auth/ProtectedRoute';
 import CodeEditor from '../components/CodeEditor';
+import Header from '../components/common/Header/Header';
 import Loading from '../components/common/Loading/Loading';
 import routes from './routes';
 
@@ -16,7 +17,7 @@ const MainRoutes = () => {
 
   return (
     <div className={classes.main}>
-      <div>Header</div>
+      <Header />
       <div className={classes.page}>
         <Routes>
           <Route
