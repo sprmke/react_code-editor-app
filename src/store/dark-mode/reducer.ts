@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const initialState = false;
 
-const darkmodeSlice = createSlice({
+const darkModeSlice = createSlice({
   name: 'darkMode',
   initialState,
   reducers: {
@@ -12,6 +12,9 @@ const darkmodeSlice = createSlice({
   },
 });
 
-export const { toggleDarkMode } = darkmodeSlice.actions;
+export const { toggleDarkMode } = darkModeSlice.actions;
 
-export default darkmodeSlice.reducer;
+// store darkModeReducer in a constant for autocompletion
+// inside combineReducers from rootReducer file
+const darkModeReducer = darkModeSlice.reducer;
+export default darkModeReducer;
