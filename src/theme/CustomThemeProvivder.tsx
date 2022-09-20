@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@material-ui/core';
 import { createTheme } from '@material-ui/core/styles';
-import React, { PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 import { useAppSelector } from '../store/hooks';
 import { appColors, darkModeColors } from './color';
 

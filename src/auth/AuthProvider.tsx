@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 import { AppState, Auth0Provider } from '@auth0/auth0-react';
 import appConfig from '../config/appConfig';
 import { useNavigate } from 'react-router-dom';
