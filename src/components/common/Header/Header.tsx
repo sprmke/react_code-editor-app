@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/styles';
 import { toggleDarkMode } from '../../../store/dark-mode/reducer';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import DarkModeIcon from '@material-ui/icons/Brightness2';
+import AuthenticatedButtons from './AuthenticatedButtons';
+import UnauthenticatedButtons from './UnauthenticatedButtons';
 
 const Header = () => {
   const classes = useStyles();
@@ -28,9 +30,9 @@ const Header = () => {
           checked={darkMode}
         />
         {isAuthenticated ? (
-          <div>Authenticated buttons</div>
+          <AuthenticatedButtons />
         ) : (
-          <div>Unauthenticated buttons</div>
+          <UnauthenticatedButtons />
         )}
       </Toolbar>
     </AppBar>
