@@ -3,11 +3,6 @@ import React, { PropsWithChildren, ReactNode, useEffect } from 'react';
 import { Route, RouteProps, Routes } from 'react-router-dom';
 import Loading from '../components/common/Loading/Loading';
 
-interface ProtectRouteProps extends RouteProps {
-  children: ReactNode;
-  path: string;
-}
-
 const ProtectedRoute = (props: PropsWithChildren<{ [key: string]: any }>) => {
   const { children, ...args } = props;
 
