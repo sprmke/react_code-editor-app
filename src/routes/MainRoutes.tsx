@@ -5,6 +5,7 @@ import ProtectedRoute from '../auth/ProtectedRoute';
 import CodeEditor from '../components/CodeEditor';
 import Header from '../components/common/Header/Header';
 import Loading from '../components/common/Loading/Loading';
+import Home from '../pages/Home/Home';
 import routes from './routes';
 
 const MainRoutes = () => {
@@ -26,7 +27,7 @@ const MainRoutes = () => {
               isAuthenticated ? (
                 <Navigate replace to={routes.codeEditor} />
               ) : (
-                <div>Home</div>
+                <Home />
               )
             }
           />

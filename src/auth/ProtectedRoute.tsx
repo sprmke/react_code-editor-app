@@ -7,12 +7,9 @@ interface ProtectedRouteProps {
 }
 
 const ProtectedRoute = ({ component }: ProtectedRouteProps) => {
-  const Component = withAuthenticationRequired(
-    component as ComponentType<any>,
-    {
-      onRedirecting: () => <Loading />,
-    }
-  );
+  const Component = withAuthenticationRequired(component as ComponentType, {
+    onRedirecting: () => <Loading />,
+  });
 
   return <Component />;
 };
