@@ -23,7 +23,7 @@ const Header = () => {
         <Typography variant="h6" className={classes.title}>
           Code Editor App
         </Typography>
-        <DarkModeIcon />
+        <DarkModeIcon data-testid="dark-mode-icon" />
         <Switch
           onChange={onChangeDarkMode}
           color="default"

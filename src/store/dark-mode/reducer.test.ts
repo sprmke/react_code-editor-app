@@ -9,10 +9,14 @@ describe('dark mode reducer', () => {
   });
 
   it('should enable dark mode if it is disabled', () => {
-    expect(darkModeReducer(false, toggleDarkMode)).toEqual(true);
+    const IS_DARK_MODE_ENABLED = false;
+    const darkModeState = darkModeReducer(IS_DARK_MODE_ENABLED, toggleDarkMode);
+    expect(darkModeState).toEqual(true);
   });
 
   it('should disable dark mode if it is enabled', () => {
-    expect(darkModeReducer(true, toggleDarkMode)).toEqual(false);
+    const IS_DARK_MODE_ENABLED = true;
+    const darkModeState = darkModeReducer(IS_DARK_MODE_ENABLED, toggleDarkMode);
+    expect(darkModeState).toEqual(false);
   });
 });

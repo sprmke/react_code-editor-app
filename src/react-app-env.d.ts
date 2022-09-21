@@ -2,3 +2,5 @@
 
 // Will fix the could not find declation file module error on persistConfig.ts
 /// <reference types="redux-persist" />
+
+declare module 'redux-mock-store';
