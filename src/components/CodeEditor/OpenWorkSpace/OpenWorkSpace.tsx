@@ -12,7 +12,8 @@ const OpenWorkSpace = () => {
   };
 
   const onFilesUpload = () => {
-    console.log('onFilesUpload');
+    const files = directoryInputRef.current.files as FileList;
+    console.log(files);
   };
 
   return (
