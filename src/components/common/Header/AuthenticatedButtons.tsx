@@ -1,12 +1,13 @@
 import { makeStyles } from '@material-ui/styles';
 import SignOut from '../../../auth/Signout';
+import OpenWorkSpace from '../../CodeEditor/OpenWorkSpace/OpenWorkSpace';
 
 const AuthenticatedButtons = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <div>Open Workspace</div>
+      <OpenWorkSpace />
       <SignOut />
     </div>
   );
