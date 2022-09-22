@@ -1,19 +1,26 @@
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { useRef } from 'react';
+import { useAppDispatch } from '../../../store/hooks';
+import readFiles from '../../../store/thunks/readFiles/readFiles';
 import { commonColors } from '../../../theme/color';
 
 const OpenWorkSpace = () => {
   const classes = useStyles();
   const directoryInputRef = useRef<HTMLInputElement>(null!);
+  const dispatch = useAppDispatch();
 
   const onClick = () => {
     directoryInputRef.current.click();
   };
 
-  const onFilesUpload = () => {
-    const files = directoryInputRef.current.files as FileList;
-    console.log(files);
+  const onFilesUpload = async () => {
+    try {
+      const files = directoryInputRef.current.files as FileList;
+      dispatch(readFiles(files));
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
