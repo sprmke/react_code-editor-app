@@ -18,7 +18,8 @@ const FileViewer = () => {
   };
 
   const renderTree = (node: FileViewerStructure) => {
-    const { id: nodeId, name: nodeName, extension } = node;
+    const { id, name: nodeName, extension } = node;
+    const nodeId = `${id}-${nodeName}`;
 
     return (
       <TreeItem

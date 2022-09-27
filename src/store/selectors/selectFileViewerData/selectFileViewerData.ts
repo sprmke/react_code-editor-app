@@ -1,62 +1,58 @@
 import { createSelector } from '@reduxjs/toolkit';
-import FileViewerStructure from '../../../types/FileViewerStructure';
+import FVS from '../../../types/FileViewerStructure';
 import UserFile from '../../../types/UserFile';
 import { RootState } from '../../store';
+import { v4 as uuidv4 } from 'uuid';
 
-const selectFileViewerData = (userFiles: UserFile[]): FileViewerStructure => {
+const selectFileViewerData = (userFiles: UserFile[]): FVS => {
   const userFilesLength = userFiles.length;
-  const result: FileViewerStructure = {} as FileViewerStructure;
+  const result: FVS = {} as FVS;
 
   for (let i = 0; i < userFilesLength; i++) {
-    const { name, relativePath, id, extension } = userFiles[i];
+    const userFile = userFiles[i];
+    const { name, relativePath, id, extension } = userFile;
     const paths = relativePath.split('/');
-
     let j = 0;
-    let children;
+    let currentLevel: any = result;
 
-    // loop through nested files until we reach the file name
+    // Handle subfolders
     while (paths[j] !== name) {
       const path = paths[j];
 
-      if (j === 0) {
-        // set default values if empty FileViewerStructure
-        if (!result.name) {
-          result.id = j.toString();
-          result.name = path;
-          result.children = [];
-        }
+      if (!Array.isArray(currentLevel) && !currentLevel.id) {
+        currentLevel.id = uuidv4();
+        currentLevel.name = path;
+        currentLevel.children = [];
+        currentLevel = currentLevel.children;
         j++;
         continue;
       }
 
-      // check and get if subfolder exist
-      children = result.children!;
-      const subfolder = children?.find((child) => child.name === path);
+      if (!Array.isArray(currentLevel) && currentLevel.children) {
+        currentLevel = currentLevel.children;
+        j++;
+        continue;
+      }
 
-      // get the children if has subfolder
+      let subfolder: any = (currentLevel as any).find(
+        (child: FVS) => child.name === path
+      );
+
       if (subfolder) {
-        children = subfolder.children;
+        currentLevel = subfolder.children!;
+        j++;
       } else {
-        // get the next children if subfolder doesn't exist
-        children?.push({
+        currentLevel.push({
           id: j.toString(),
           name: path,
           children: [],
         });
-        children = children[children.length - 1];
+        currentLevel = currentLevel[currentLevel.length - 1];
       }
-      j++;
     }
 
     const fileData = { id, name, extension };
-
-    // set fileData as children is empty
-    if (!children) {
-      result.children!.push(fileData);
-      // set fileData inside nested children list
-    } else {
-      (children as FileViewerStructure).children!.push(fileData);
-    }
+    currentLevel.push(fileData);
   }
   return result;
 };
