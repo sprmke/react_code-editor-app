@@ -1,4 +1,5 @@
 import { RootState } from '../../store';
+import selectFileViewerData from './selectFileViewerData';
 
 describe('selectFileViewerData', () => {
   it('should convert a list of user files to the file viewer structure', () => {
