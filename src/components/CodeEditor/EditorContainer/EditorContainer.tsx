@@ -1,11 +1,13 @@
 import { AppBar, makeStyles, Tab, Tabs } from '@material-ui/core';
 import { ChangeEvent } from 'react';
-import { useAppSelector } from '../../../store/hooks';
+import { useAppDispatch, useAppSelector } from '../../../store/hooks';
+import { setEditorActiveFile } from '../../../store/reducers/files/reducer';
 import selectActiveFiles from '../../../store/selectors/selectActiveFiles/selectActiveFiles';
 import CustomTabPanel from './CustomTabPanel';
 
 const EditorContainer = () => {
   const classes = useStyles();
+  const dispatch = useAppDispatch();
   const activeFiles = useAppSelector(selectActiveFiles);
   const editorActiveFile = useAppSelector(
     (state) => state.files.editorActiveFile
@@ -17,7 +19,10 @@ const EditorContainer = () => {
   }
 
   const onTabClick = (event: ChangeEvent<{}>, tabPosition: number) => {
-    console.log('foo');
+    const activeFileId = activeFilesIds[tabPosition];
+    if (activeFileId !== editorActiveFile) {
+      dispatch(setEditorActiveFile(activeFileId));
+    }
   };
 
   return (
