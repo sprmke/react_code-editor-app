@@ -3,6 +3,7 @@ import { ChangeEvent } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { setEditorActiveFile } from '../../../store/reducers/files/reducer';
 import selectActiveFiles from '../../../store/selectors/selectActiveFiles/selectActiveFiles';
+import CustomTabLabel from './CustomTabLabel';
 import CustomTabPanel from './CustomTabPanel';
 
 const EditorContainer = () => {
@@ -39,7 +40,12 @@ const EditorContainer = () => {
           onChange={onTabClick}
         >
           {activeFiles.map((activeFile) => {
-            return <Tab key={activeFile.id} label="foo" />;
+            return (
+              <Tab
+                key={activeFile.id}
+                label={<CustomTabLabel activeFile={activeFile} />}
+              />
+            );
           })}
         </Tabs>
       </AppBar>
