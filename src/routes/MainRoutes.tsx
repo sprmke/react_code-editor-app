@@ -2,9 +2,9 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { makeStyles } from '@material-ui/core';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import ProtectedRoute from '../auth/ProtectedRoute';
-import CodeEditor from '../components/CodeEditor';
 import Header from '../components/common/Header/Header';
 import Loading from '../components/common/Loading/Loading';
+import CodeEditor from '../pages/CodeEditor/CodeEditor';
 import Home from '../pages/Home/Home';
 import routes from './routes';
 
