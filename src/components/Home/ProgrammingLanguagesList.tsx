@@ -8,7 +8,7 @@ import { ReactComponent as PythonIcon } from '../../assets/images/python-origina
 import { ReactComponent as RubyIcon } from '../../assets/images/ruby-original.svg';
 import { ReactComponent as TypescriptIcon } from '../../assets/images/typescript-original.svg';
 import { ReactComponent as ReactIcon } from '../../assets/images/react-original.svg';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/material/styles';
 
 const ProgrammingLanguagesList = () => {
   const classes = useStyles();

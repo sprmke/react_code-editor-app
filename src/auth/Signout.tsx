@@ -1,5 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react';
-import { Button, makeStyles } from '@material-ui/core';
+import { Button } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import { commonColors } from '../theme/color';
 
 const SignOut = () => {

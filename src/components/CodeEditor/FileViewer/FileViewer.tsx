@@ -1,11 +1,11 @@
-import { makeStyles } from '@material-ui/core';
-import { TreeItem, TreeView } from '@material-ui/lab';
+import { makeStyles } from '@mui/material';
+import { TreeItem, TreeView } from '@mui/lab';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import selectFileViewerData from '../../../store/selectors/selectFileViewerData/selectFileViewerData';
 import FileViewerStructure from '../../../types/FileViewerStructure';
 import ExtensionIcon from '../ExtensionIcon/ExtensionIcon';
-import FolderOpenIcon from '@material-ui/icons/FolderOpen';
-import FolderIcon from '@material-ui/icons/Folder';
+import FolderOpenIcon from '@mui/icons-material/FolderOpen';
+import FolderIcon from '@mui/icons-material/Folder';
 import openFile from '../../../store/thunks/openFile/openFile';
 
 const FileViewer = () => {

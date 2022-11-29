@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@mui/styles';
 import SignOut from '../../../auth/Signout';
 import OpenWorkSpace from '../../CodeEditor/OpenWorkSpace/OpenWorkSpace';
 

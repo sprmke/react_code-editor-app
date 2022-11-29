@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core';
+import { makeStyles } from '@mui/material';
 import ProgrammingLanguagesList from '../../components/Home/ProgrammingLanguagesList';
 
 const Home = () => {

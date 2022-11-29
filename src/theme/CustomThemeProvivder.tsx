@@ -1,5 +1,6 @@
-import { ThemeProvider } from '@material-ui/core';
-import { createTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@mui/material';
+import { Theme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import { PropsWithChildren } from 'react';
 import { useAppSelector } from '../store/hooks';
 import { appColors, darkModeColors } from './color';
@@ -11,7 +12,7 @@ const CustomThemeProvivder = (props: PropsWithChildren<{}>) => {
   const darkMode = useAppSelector((state) => state.darkMode);
   const theme = createTheme({
     palette: {
-      type: darkMode ? 'dark' : 'light',
+      mode: darkMode ? 'dark' : 'light',
       primary: {
         main: appColors.primary,
       },
@@ -28,7 +29,7 @@ export default CustomThemeProvivder;
 // We need to use module augmentation
 // for the theme to accept our theme color values,
 // Learn more: https://mui.com/material-ui/customization/theming/#custom-variables
-declare module '@material-ui/core/styles/createTheme' {
+declare module '@mui/material/styles/createTheme' {
   interface Theme {
     background: string;
     font: string;
@@ -38,4 +39,7 @@ declare module '@material-ui/core/styles/createTheme' {
     background: string;
     font: string;
   }
+}
+declare module '@mui/styles' {
+  interface DefaultTheme extends Theme {}
 }

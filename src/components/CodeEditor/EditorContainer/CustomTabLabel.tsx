@@ -1,10 +1,11 @@
-import { makeStyles } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
 import { MouseEvent } from 'react';
 import UserFile from '../../../types/UserFile';
 import ExtensionIcon from '../ExtensionIcon/ExtensionIcon';
-import CloseIcon from '@material-ui/icons/Close';
+import CloseIcon from '@mui/icons-material/Close';
 import { useAppDispatch } from '../../../store/hooks';
 import closeFile from '../../../store/thunks/closeFile/closeFile';
+import { IconButton } from '@mui/material';
 
 interface Props {
   activeFile: UserFile;
@@ -26,7 +27,13 @@ const CustomTabLabel = (props: Props) => {
     <div className={classes.root}>
       <ExtensionIcon extension={extension} />
       <div className={classes.fileName}>{fileName}</div>
-      <CloseIcon className={classes.closeIcon} onClick={onClose} />
+      <IconButton
+        aria-label="delete"
+        className={classes.closeIcon}
+        onClick={onClose}
+      >
+        <CloseIcon />
+      </IconButton>
     </div>
   );
 };

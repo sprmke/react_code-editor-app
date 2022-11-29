@@ -1,4 +1,4 @@
-import { AppBar, makeStyles, Tab, Tabs } from '@material-ui/core';
+import { AppBar, makeStyles, Tab, Tabs } from '@mui/material';
 import { ChangeEvent } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { setEditorActiveFile } from '../../../store/reducers/files/reducer';

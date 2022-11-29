@@ -1,5 +1,5 @@
 import { useAuth0 } from '@auth0/auth0-react';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles } from '@mui/material';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import ProtectedRoute from '../auth/ProtectedRoute';
 import Header from '../components/common/Header/Header';
