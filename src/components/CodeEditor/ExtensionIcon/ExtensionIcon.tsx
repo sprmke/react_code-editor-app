@@ -9,7 +9,7 @@ import { ReactComponent as RubyIcon } from '../../../assets/images/ruby-original
 import { ReactComponent as TypescriptIcon } from '../../../assets/images/typescript-original.svg';
 import { ReactComponent as ReactIcon } from '../../../assets/images/react-original.svg';
 import { ReactComponent as DefaultIcon } from '../../../assets/images/blank-file.svg';
-import { makeStyles } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 
 interface Props {
   extension?: string;

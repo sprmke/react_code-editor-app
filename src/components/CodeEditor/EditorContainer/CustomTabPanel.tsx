@@ -1,4 +1,4 @@
-import { makeStyles } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import UserFile from '../../../types/UserFile';
 import CustomMonacoEditor from './CustomMonacoEditor';
 

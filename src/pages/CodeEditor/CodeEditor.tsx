@@ -1,4 +1,4 @@
-import { makeStyles } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import FileViewer from '../../components/CodeEditor/FileViewer/FileViewer';
 import EditorContainer from '../../components/CodeEditor/EditorContainer/EditorContainer';
 

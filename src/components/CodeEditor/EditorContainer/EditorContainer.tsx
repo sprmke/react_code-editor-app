@@ -1,4 +1,5 @@
-import { AppBar, makeStyles, Tab, Tabs } from '@mui/material';
+import { AppBar, Tab, Tabs } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import { ChangeEvent } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { setEditorActiveFile } from '../../../store/reducers/files/reducer';

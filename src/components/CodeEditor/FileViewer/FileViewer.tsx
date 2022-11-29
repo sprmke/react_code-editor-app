@@ -1,4 +1,4 @@
-import { makeStyles } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import { TreeItem, TreeView } from '@mui/lab';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import selectFileViewerData from '../../../store/selectors/selectFileViewerData/selectFileViewerData';
